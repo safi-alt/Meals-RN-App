@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { View, Text, StyleSheet } from "react-native";
 
-const MealDetailsScreen = () => {
+const MealDetailsScreen = (props) => {
   return (
     <View>
       <Text>The Meals Detail Screen Screen!</Text>

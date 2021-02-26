@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { View, Text, StyleSheet } from "react-native";
 
-const FiltersScreen = () => {
+const FiltersScreen = (props) => {
   return (
     <View>
       <Text>The Filter Screen!</Text>
