@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "open-sans-bold",
-    fontSize: 20,
+    fontSize: 18,
     textAlign: "right",
   },
 });
