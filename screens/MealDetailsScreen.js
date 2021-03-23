@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
 
@@ -15,6 +15,11 @@ const MealDetailsScreen = (props) => {
   const mealId = props.navigation.getParam("mealId");
 
   const selectedMeals = availabbleMeals.find((meal) => meal.id === mealId);
+
+  // useEffect(() => {
+  //   props.navigation.setParams({ mealTitle: selectedMeals.title });
+  // }, [selectedMeals]);
+
   return (
     <ScrollView>
       <Image source={{ uri: selectedMeals.imageUrl }} style={styles.image} />
@@ -38,9 +43,10 @@ const MealDetailsScreen = (props) => {
 
 MealDetailsScreen.navigationOptions = (navigationData) => {
   const mealId = navigationData.navigation.getParam("mealId");
-  const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+  const mealTitle = navigationData.navigation.getParam("mealTitle");
+  //const selectedMeal = MEALS.find((meal) => meal.id === mealId);
   return {
-    headerTitle: selectedMeal.title,
+    headerTitle: mealTitle,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
